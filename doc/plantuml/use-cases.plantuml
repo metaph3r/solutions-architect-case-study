@@ -4,8 +4,12 @@ left to right direction
 
 ' actors
 
+:user: as us
 :student: as st
 :instructor: as tr
+
+us <|-- st
+us <|-- tr
 
 ' use cases
 
@@ -17,17 +21,18 @@ left to right direction
 (list questions) as (UC6)
 (answer questions) as (UC7)
 
+' user use cases
+
+us --> UC1
+us --> UC2
+
 ' student use cases
 
-st --> UC1
-st --> UC2
 st --> UC3
 st --> UC4
 
 ' trainer use cases
 
-tr --> UC1
-tr --> UC2
 tr --> UC5
 tr --> UC6
 tr --> UC7

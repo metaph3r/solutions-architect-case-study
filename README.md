@@ -4,7 +4,13 @@
 
 ### Scope
 
-Develop an learning platform application for students and instructors.
+Develop a learning platform application for students and instructors.
+
+The application should have the ability to log in as different users with different roles. Users are able to see courses they are applicable for.
+
+Students can view the course lectures and ask questions to the instructor.
+
+Instructors on the other hand can manage their courses and answer questions.
 
 ### Key audiance
 
@@ -31,8 +37,16 @@ Instructor - People who host their courses on the platform and provide feedback 
 #### Technical
 
 1. Lectures need to load within 1 second
+
+    Use high-performance cloud service.
+    
 2. Downtimes have to be avoided
+
+    Use geo-reduntant high-availability cloud service.
+    
 3. Millions of users to be expected
+
+    Use scalable cloud environment with distributed content delivery network.
 
 ## Architecture overview
 
