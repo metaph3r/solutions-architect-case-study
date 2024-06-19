@@ -1,0 +1,35 @@
+@startuml use-cases
+
+left to right direction
+
+' actors
+
+:student: as st
+:instructor: as tr
+
+' use cases
+
+(login) as (UC1)
+(list courses) as (UC2)
+(open lecture content) as (UC3)
+(submit questions) as (UC4)
+(manage courses) as (UC5)
+(list questions) as (UC6)
+(answer questions) as (UC7)
+
+' student use cases
+
+st --> UC1
+st --> UC2
+st --> UC3
+st --> UC4
+
+' trainer use cases
+
+tr --> UC1
+tr --> UC2
+tr --> UC5
+tr --> UC6
+tr --> UC7
+
+@enduml

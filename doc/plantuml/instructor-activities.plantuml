@@ -1,0 +1,18 @@
+@startuml instuctor-activities
+
+start
+:login;
+note right
+    a list of available
+    courses is displayed
+end note
+:select course;
+note right
+    the course management page
+    is displayed
+end note
+:open unanswered question;
+:answer question;
+end
+
+@enduml

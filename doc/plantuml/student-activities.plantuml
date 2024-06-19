@@ -1,0 +1,23 @@
+@startuml student-activities
+
+start
+:login;
+note right
+    a list of available
+    courses is displayed
+end note
+:select course;
+note right
+    the last lecture
+    of the course is displayed
+end note
+fork
+    :select different lecture of curriculum;
+fork again
+    :view lecture content;
+fork again
+    :submit question in Q&A panel;
+end fork
+end
+
+@enduml
