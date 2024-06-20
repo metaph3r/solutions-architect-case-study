@@ -1,0 +1,66 @@
+@startuml components
+
+cloud "Cloud Delivery Network" as CDN
+
+package "Frontend" {
+    [Presentation] as P
+    [Data Retrieval] as DR
+
+    P --> DR
+}
+
+DR --> CDN
+
+package "Backend" {
+    [User Management] as UM
+    interface "User Management Interface" as UMI
+    UMI -- UM
+
+    [Course Management] as CM
+    interface "Course Management Interface" as CMI
+    CMI -- CM
+
+    [API Gateway] as AG
+    interface "API Gateway Interface" as AGI
+    AGI -- AG
+    AG --> UMI
+    AG --> CMI
+    CDN --> AGI
+
+    package "Media" {
+        [Media Service] as MS
+        note right of MS
+            access to lecture content
+            like videos, presentations
+            and pdf files
+        end note
+
+        interface "Media Interface" as MI
+        database "Media DB" as MDB <<Blob Storage>>
+
+        MI -- MS
+        MS -- MDB
+        AG --> MI
+    }
+
+    package "Metadata" {
+        [Metadata Service] as MDS
+        note right of MDS
+            access to metadata information
+            like users, course and lecture
+            data, questions and answers
+        end note
+
+        interface "Metadata Interface" as MDI
+        database "Metadata DB" as MDDB <<SQL Database>>
+
+        MDI -- MDS
+        MDS -- MDDB
+    }
+
+    UM --> MDI
+    CM --> MI
+    CM --> MDI
+}
+
+@enduml
