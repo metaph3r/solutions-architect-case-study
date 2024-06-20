@@ -81,3 +81,7 @@ In order to address the performance and availability requirements the backend wi
 The different services can be scaled independently to provide necessary performance and availability.
 
 The main purpose of the API Gateway is to provide secure access to the underlying services.
+
+### Business Entities
+
+![Business Entities](/doc/plantuml/out/business-entities/business-entities.png)

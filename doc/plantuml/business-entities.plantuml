@@ -1,0 +1,42 @@
+@startuml business-entities
+
+abstract User {
+    String username
+    String password
+    String firstName
+    String lastName
+    Date birthday
+}
+class Student
+class Instructor
+class Address {
+    String street
+    String city
+    String country
+}
+class BillingInformation
+
+class Course {
+    String name
+    String description
+}
+class Lecture {
+    String name
+    int order
+    String description
+}
+class LectureContent {
+    enum Type
+    int order
+    binary content
+}
+
+Address *-- User
+BillingInformation "0..*" *-- "1" User
+Student <|-- User
+Instructor <|-- User
+Lecture "0..*" *-- "1" Course
+User "0..*" -- "0..*" Course
+LectureContent "0..*" *-- "1" Lecture
+
+@enduml
